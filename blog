@@ -1,0 +1,28 @@
+from flask import Flask,render_template
+
+app = Flask(__name__,static_folder="C:/Users/Hamza/workspace/Flask/templates/Static")
+
+@app.route("/")
+def template():
+	return render_template("template.html")
+
+@app.route("/foto")
+def foto():
+	return render_template("foto_sil.html")
+
+@app.route("/extend")
+def extend():
+	return render_template("for_extend_sil.html")
+
+@app.route("/navbar")
+def navbar():
+	return render_template("navbar2.html")
+
+@app.route("/includes")
+def includes():
+	return render_template("includes/includes.html")
+
+
+
+if __name__=="__main__":   #dosyanın modül olarak aktarılıp aktarılmadığını kontrol ediyor. 
+	app.run(debug=True)
